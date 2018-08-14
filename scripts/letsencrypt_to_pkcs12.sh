@@ -4,8 +4,8 @@
 
 NAME=event.nova-labs.org
 PEM_DIR=/etc/letsencrypt/live/$NAME
+EVENT_DIR=/opt/event_service
 
-openssl pkcs12 -export -in ${PEM_DIR}/fullchain.pem -inkey ${PEM_DIR}/privkey.pem -out ${NAME}.p12 -name $NAME -CAfile chain.pem -caname root
-
+openssl pkcs12 -export -in ${PEM_DIR}/fullchain.pem -inkey ${PEM_DIR}/privkey.pem -out ${EVENT_DIR}/${NAME}.p12 -name $NAME -CAfile chain.pem -caname root -passout pass:novalabs
 
 
