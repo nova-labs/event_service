@@ -15,6 +15,8 @@ systemctl enable event_service
 systemctl start event_service
 ```
 
+Note: certbot files need to be moved to the appropriate /etc/letsencrypt directory.  
+
 ### Run Manually
 ```bash
 java -jar event_service-<version>.jar
